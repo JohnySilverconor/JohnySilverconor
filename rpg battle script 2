@@ -1,0 +1,60 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
+int enemyname(int choice);
+int enemyname(int choice){
+    int choiceid;
+    choiceid = choice;
+    switch(choiceid){
+        
+    case 1:
+    {
+    char ename[14] = {"Goblin"};
+    cout<<ename;
+    }
+    break;
+    
+    case 2:{
+    char esame[14] = {"Firebomb"};
+    cout<< esame;
+    }
+    break;
+    }
+    return choiceid;
+}
+int main()
+{
+    srand(time(NULL));
+    char name[10];
+    cin>>name;
+    short playerHealth = 100;
+    short enemyHealth = 100;
+
+    while (playerHealth > 0 && enemyHealth > 0)
+    {
+        short playerAttack = rand() % 10 + 1;
+        short enemyAttack = rand() % 10 + 1;
+        cout << name <<" attacks does " << playerAttack << " damage!" << endl;
+        enemyHealth -= playerAttack;
+
+        if (enemyHealth <= 0)
+            break;
+
+        cout << enemyname(1) <<" attacks does " << enemyAttack << " damage!" << endl;
+        playerHealth -= enemyAttack;
+
+        cout << name << " health: " << playerHealth << endl;
+        cout << enemyname(1) <<" health: " << enemyHealth << endl;
+    }
+
+    if (playerHealth > 0)
+        cout << "You win!" << endl;
+    else
+        cout << "You lose!" << endl;
+        playerHealth=0;
+
+    system("PAUSE");
+    return 0;
+}
