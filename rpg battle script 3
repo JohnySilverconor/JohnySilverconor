@@ -1,0 +1,67 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+// Define character class
+class Character {
+public:
+    string name;
+    int hp;
+    int attack;
+    int defense;
+    int speed;
+};
+
+// Define battle function
+void battle(Character player, Character enemy) {
+    // Assign turn order based on speed
+    Character first, second;
+    if (player.speed > enemy.speed) {
+        first = player;
+        second = enemy;
+    } else {
+        first = enemy;
+        second = player;
+    }
+
+    // Main battle loop
+    while (player.hp > 0 && enemy.hp > 0) {
+        // First character's turn
+        cout << first.name << " attacks!\n";
+        int damage = first.attack - second.defense;
+        if (damage < 1) {
+            damage = 1;
+        }
+        cout << second.name << " takes " << damage << " damage!\n";
+        second.hp -= damage;
+        if (second.hp <= 0) {
+            cout << second.name << " has been defeated!\n";
+            break;
+        }
+
+        // Second character's turn
+        cout << second.name << " attacks!\n";
+        damage = second.attack - first.defense;
+        if (damage < 1) {
+            damage = 1;
+        }
+        cout << first.name << " takes " << damage << " damage!\n";
+        first.hp -= damage;
+        if (first.hp <= 0) {
+            cout << first.name << " has been defeated!\n";
+            break;
+        }
+    }
+}
+
+// Test the function
+int main() {
+    // Create characters
+    Character player = {"Player", 100, 20, 10, 15};
+    Character enemy = {"Enemy", 80, 15, 5, 20};
+
+    // Start battle
+    battle(player, enemy);
+
+    return 0;
+}
