@@ -1,0 +1,63 @@
+#include <iostream>
+#include <string>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
+
+class Character {
+public:
+    string name;
+    int hp;
+    int atk;
+    int def;
+    int spd;
+    Character(string n, int h, int a, int d, int s) {
+        name = n;
+        hp = h;
+        atk = a;
+        def = d;
+        spd = s;
+    }
+};
+
+void battle(Character& player, Character& enemy) {
+    cout << "Battle Start!" << endl;
+    bool player_turn = true;
+    while (player.hp > 0 && enemy.hp > 0) {
+        if (player_turn) {
+            cout << "Player Turn" << endl;
+            int damage = player.atk - enemy.def;
+            if (damage < 0) {
+                damage = 0;
+            }
+            cout << player.name << " attacks " << enemy.name << " for " << damage << " damage!" << endl;
+            enemy.hp -= damage;
+            if (enemy.hp <= 0) {
+                cout << enemy.name << " is defeated!" << endl;
+                break;
+            }
+        } else {
+            cout << "Enemy Turn" << endl;
+            int damage = enemy.atk - player.def;
+            if (damage < 0) {
+                damage = 0;
+            }
+            cout << enemy.name << " attacks " << player.name << " for " << damage << " damage!" << endl;
+            player.hp -= damage;
+            if (player.hp <= 0) {
+                cout << player.name << " is defeated!" << endl;
+                break;
+            }
+        }
+        player_turn = !player_turn;
+    }
+}
+
+int main() {
+    srand(time(NULL));
+    Character player("Player", 100, 20, 10, 15);
+    Character enemy("Enemy", 80, 15, 8, 20);
+    battle(player, enemy);
+    return 0;
+}
