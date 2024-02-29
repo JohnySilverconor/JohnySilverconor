@@ -170,3 +170,259 @@ public class cannondata
       {
       }
    }
+
+/* javascript
+public class WeaponData
+   {
+      
+      public static const NONE:int = -1;
+      
+      public static const CANNONBALL:int = 0;
+      
+      public static const SCATTERSHOT:int = 1;
+      
+      public static const FIREBALL:int = 2;
+      
+      public static const NET:int = 3;
+      
+      public static const GIGABALL:int = 4;
+      
+      public static const OIL:int = 5;
+      
+      public static const FRONTCANNON:int = 6;
+      
+      public static const BOSSCANNON:int = 21;
+      
+      public static const BOSSWAVE:int = 22;
+      
+      public static const BOSSCIRCULAR:int = 23;
+      
+      public static const BOSSCROSS:int = 24;
+      
+      public static const BOSSCROSS_ALT:int = 25;
+      
+      public static const BOSSHOMING:int = 26;
+      
+      public static const BOSSTRIDENT:int = 27;
+      
+      public static const RAM:int = 6;
+      
+      public static const GALLERY:int = 7;
+      
+      public static const SHIELD:int = 8;
+      
+      public static const HUNTER:int = 9;
+      
+      public static const HUMAN:int = 10;
+      
+      public static var wCannon:int = -1;
+      
+      public static var wFire:int = -1;
+      
+      public static var wGiga:int = -1;
+      
+      public static var wRam:int = -1;
+      
+      public static var wHuman:int = -1;
+      
+      public static var wShield:int = -1;
+      
+      public static var wGallery:int = -1;
+      
+      public static var wTreasure:int = -1;
+      
+      public static var aFire:int = 0;
+      
+      public static var aGiga:int = 0;
+      
+      public static var aHuman:int = 0;
+      
+      public static var aShield:int = 0;
+      
+      public static var aRam:Number = 0;
+      
+      public static var aGallery:int = 0;
+      
+      public static var priceCannon:Vector.<uint>;
+      
+      public static var dmgCannon:Vector.<uint>;
+      
+      public static var rangeCannon:Vector.<uint>;
+      
+      public static var dmgScatter:Vector.<uint>;
+      
+      public static var rangeScatter:Vector.<uint>;
+      
+      public static var priceFire:Vector.<uint>;
+      
+      public static var dmgFire:Vector.<uint>;
+      
+      public static var dpsFire:Vector.<uint>;
+      
+      public static var rangeFire:Vector.<uint>;
+      
+      public static var ammoFire:Vector.<uint>;
+      
+      public static var dmgNet:Vector.<uint>;
+      
+      public static var rangeNet:Vector.<uint>;
+      
+      public static var dmgOil:Vector.<uint>;
+      
+      public static var durOil:Vector.<uint>;
+      
+      public static var rangeOil:Vector.<uint>;
+      
+      public static var priceGiga:Vector.<uint>;
+      
+      public static var dmgGiga:Vector.<uint>;
+      
+      public static var rangeGiga:Vector.<uint>;
+      
+      public static var ammoGiga:Vector.<uint>;
+      
+      public static var priceRam:Vector.<uint>;
+      
+      public static var dmgRam:Vector.<uint>;
+      
+      public static var chanceRam:Vector.<uint>;
+      
+      public static var dmgRevenge:Vector.<uint>;
+      
+      public static var chanceRevenge:Vector.<uint>;
+      
+      public static var chanceCloak:Vector.<uint>;
+      
+      public static var speedBonus:Vector.<uint>;
+      
+      public static var priceGallery:Vector.<uint>;
+      
+      public static var dmgGallery:Vector.<uint>;
+      
+      public static var ammoGallery:Vector.<uint>;
+      
+      public static var priceShield:Vector.<uint>;
+      
+      public static var chanceShield:Vector.<uint>;
+      
+      public static var reduceShield:Vector.<uint>;
+      
+      public static var priceHunter:Vector.<uint>;
+      
+      public static var chanceHunter:Vector.<uint>;
+      
+      public static var itemHunter:Vector.<uint>;
+      
+      public static var priceHuman:Vector.<int>;
+      
+      public static var durHuman:Vector.<int>;
+      
+      public static var dpsHuman:Vector.<int>;
+      
+      public static var rangeHuman:Vector.<int>;
+      
+      public static var ammoHuman:Vector.<uint>;
+       
+      
+      public function WeaponData()
+      {
+         super();
+      }
+      
+      public static function ResetData() : void
+      {
+         wCannon = 1;
+         wFire = 0;
+         wRam = 0;
+         wHuman = 0;
+         wGiga = 0;
+         wShield = 0;
+         wGallery = 0;
+         wTreasure = 0;
+         priceCannon = new Vector.<uint>();
+         priceCannon.push(0,1000,2500,3500,5000);
+         dmgCannon = new Vector.<uint>();
+         dmgCannon.push(10,15,19,23,27);
+         rangeCannon = new Vector.<uint>();
+         rangeCannon.push(125,125,125,125,125);
+         dmgScatter = new Vector.<uint>();
+         dmgScatter.push(8,10,15,20,25);
+         rangeScatter = new Vector.<uint>();
+         rangeScatter.push(120,120,120,120,120);
+         priceFire = new Vector.<uint>();
+         priceFire.push(1200,2500,3250,4500,5000);
+         dmgFire = new Vector.<uint>();
+         dmgFire.push(18,25,32,38,44);
+         dpsFire = new Vector.<uint>();
+         dpsFire.push(6,8,10,12,15);
+         rangeFire = new Vector.<uint>();
+         rangeFire.push(120,120,120,120,120);
+         ammoFire = new Vector.<uint>();
+         ammoFire.push(10,15,20,25,30);
+         priceGiga = new Vector.<uint>();
+         priceGiga.push(2000,3000,4000,5000,6000);
+         dmgGiga = new Vector.<uint>();
+         dmgGiga.push(35,44,58,65,70);
+         rangeGiga = new Vector.<uint>();
+         rangeGiga.push(140,140,140,140,140);
+         ammoGiga = new Vector.<uint>();
+         ammoGiga.push(5,7,10,12,15);
+         dmgOil = new Vector.<uint>();
+         dmgOil.push(10,12,14,16,18);
+         durOil = new Vector.<uint>();
+         durOil.push(8,10,15,20,25);
+         rangeOil = new Vector.<uint>();
+         rangeOil.push(150,150,150,150,150);
+         dmgNet = new Vector.<uint>();
+         dmgNet.push(5,10,15,20,25);
+         rangeNet = new Vector.<uint>();
+         rangeNet.push(150,150,150,150,150);
+         dmgRevenge = new Vector.<uint>();
+         dmgRevenge.push(100,120,150,180,200);
+         chanceRevenge = new Vector.<uint>();
+         chanceRevenge.push(20,24,28,32,35);
+         chanceCloak = new Vector.<uint>();
+         chanceCloak.push(20,25,30,35,40);
+         speedBonus = new Vector.<uint>();
+         speedBonus.push(2,3,4,5,6);
+         priceRam = new Vector.<uint>();
+         priceRam.push(2000,3500,4500,5000,6000);
+         dmgRam = new Vector.<uint>();
+         dmgRam.push(40,60,80,100,120);
+         chanceRam = new Vector.<uint>();
+         chanceRam.push(8,9,10,11,12);
+         priceShield = new Vector.<uint>();
+         priceShield.push(500,1500,2400,3800,4500);
+         chanceShield = new Vector.<uint>();
+         chanceShield.push(30,35,40,45,50);
+         reduceShield = new Vector.<uint>();
+         reduceShield.push(1,4,6,8,10);
+         priceHuman = new Vector.<int>();
+         priceHuman.push(1000,2000,3000,4000,5000);
+         durHuman = new Vector.<int>();
+         durHuman.push(10,14,21,25,30);
+         dpsHuman = new Vector.<int>();
+         dpsHuman.push(1,2,4,6,8);
+         rangeHuman = new Vector.<int>();
+         rangeHuman.push(150,150,150,150,150);
+         ammoHuman = new Vector.<uint>();
+         ammoHuman.push(10,15,20,25,30);
+         priceHunter = new Vector.<uint>();
+         priceHunter.push(1000,2300,3500,4800,5000);
+         chanceHunter = new Vector.<uint>();
+         chanceHunter.push(1,2,3,4,5);
+         itemHunter = new Vector.<uint>();
+         itemHunter.push(20,25,35,45,55);
+         priceGallery = new Vector.<uint>();
+         priceGallery.push(1000,2000,3000,4000,5000);
+         dmgGallery = new Vector.<uint>();
+         dmgGallery.push(5,6,7,8,9);
+         ammoGallery = new Vector.<uint>();
+         ammoGallery.push(100,100,120,120,150);
+      }
+      
+      public static function SetType(type:int) : void
+      {
+      }
+   }
+*/
